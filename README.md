@@ -34,7 +34,7 @@
         <img src="./images/10.png">
         <img src="./images/11.png">
 
-+ 客户端配置
++ windows客户端配置
     + 下载ss（shadowsocks）
         ```
             https://github.com/shadowsocks/shadowsocks-windows/releases
@@ -70,3 +70,14 @@
 
     + 系统自动重启后选择7，稳了
          
++ 安卓客户端配置
+    + 下载app
+        ```
+            https://github.com/shadowsocks/shadowsocks-android/releases
+        ```
+    + 选择手动配置
+        ```
+            和windows填入一样的字段（服务器地址，端口号，密码，需要额外确认加密方式是否一致）
+
+            方式选择绕过局域网及中国大陆地址就可以了
+        ```
