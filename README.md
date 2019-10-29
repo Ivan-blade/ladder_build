@@ -1,4 +1,5 @@
 # ladder_build
++ 参考链接：https://www.itwordsweb.com/linux_doc/ss.html
 + 首先买一台vps下面是链接
 ```
     https://www.vultr.com/?ref=8305002
@@ -58,6 +59,27 @@
             配置文件路径：/etc/shadowsocks.json
             卸载方法：/usr/local/src/shadowsocks.sh uninstall
         ```
+    + 多端口开放
+        ```
+            vi /etc/shadowsock.json
+
+            {
+                "server":"my_server_ip",  #填入你的IP地址
+                "local_address": "127.0.0.1",
+                "local_port":1080,
+                "port_password": {
+                    "8381": "foobar1",    #端口号，密码
+                    "8382": "foobar2",
+                    "8383": "foobar3",
+                    "8384": "foobar4"
+                },
+                "timeout":300,
+                "method":"aes-256-cfb",
+                "fast_open": false
+            }
+
+            /etc/init.d/shadowsock restart
+        ```
 + 加速服务配置
     + 先确认当前目录
         ```
@@ -81,3 +103,4 @@
 
             方式选择绕过局域网及中国大陆地址就可以了
         ```
+
