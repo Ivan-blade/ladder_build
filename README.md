@@ -27,7 +27,7 @@
 
             chmod +x shadowsocks.sh
 
-            systemctl stop firewalld && systemctl disable firewalld
+            systemctl stop firewalld.service && systemctl disable firewalld.service
 
             ./shadowsocks.sh 2>&1 | tee shadowsocks.log
         ```
@@ -104,3 +104,18 @@
             方式选择绕过局域网及中国大陆地址就可以了
         ```
 
+```
+    /etc/security/limits.conf
+    /etc/sysctl.conf
+
+    具体方法可以参考这篇来自这个VPN推荐网站的Shadowsocks教程（英文版）的第三部分：Part 3. Shadowsocks Server Optimization：
+
+    https://www.vpndada.com/how-to-setup-shadowsocks-server-on-amazon-ec2/
+```
++ 如果连接不上，且客户端ping不通服务器的情况
+```
+    检查防火墙状态并且再次关闭该服务
+    firewall-cmd --state
+    systemctl stop firewalld.service
+    systemctl disable firewalld.service 
+```
